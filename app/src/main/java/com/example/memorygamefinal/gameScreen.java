@@ -32,6 +32,10 @@ public class gameScreen extends AppCompatActivity {
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+		super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_screen);
+
         playGame = findViewById(R.id.btn_gamescreen_playgame);
 
         topLeft = findViewById(R.id.btn_gamescreen_topleft);
@@ -67,8 +71,7 @@ public class gameScreen extends AppCompatActivity {
 
         );
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_screen);
+        
     }
 
     private void playSequence(int num) {
