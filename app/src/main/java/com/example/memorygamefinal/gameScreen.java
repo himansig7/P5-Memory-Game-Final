@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
+import android.graphics.Color; 
 
 public class gameScreen extends AppCompatActivity {
     private Button topLeft;
@@ -58,27 +59,32 @@ public class gameScreen extends AppCompatActivity {
         butIntMap.put(7,botLeft);
         butIntMap.put(8,botMid);
         butIntMap.put(9,botRight);
+		ButtonIntegerMap = butIntMap; 
 
         playGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int currNum = (int) (Math.random()*10000000)+1000000;
+                
                 gameCode = currNum;
-                playSequence(currNum);
+                playSequence();
             }
         }
-
+		
+		
 
         );
 
         
     }
 
-    private void playSequence(int num) {
+    private void playSequence() {
+		int num = (int) (Math.random()*100)+10;
         while(num>0){
             int currDig = num%10;
             Button currButton = ButtonIntegerMap.get(currDig);
-            currButton.setBackgroundColor(getResources().getColor(androidx.cardview.R.color.cardview_light_background));
+            currButton.setBackgroundColor(Color.BLUE);
+			currButton.setBackgroundColor(Color.RED); 
+				
         }
     }
 
